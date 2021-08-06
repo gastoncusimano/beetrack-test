@@ -34,6 +34,13 @@ gem "sidekiq"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 3.0'
 
+gem 'sass-rails'
+gem 'font-awesome-sass', '~> 5.6.1'
+
+# Reverse Geocoder
+gem 'geocoder'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -43,6 +50,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Gem for Swagger
   gem 'rswag'
+  # For ENV vars
+  gem 'dotenv-rails'
 end
 
 group :development do

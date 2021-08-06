@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     end
   end
   # Routes
+  get '/show', to: 'cars#show'
 end
