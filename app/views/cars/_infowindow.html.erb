@@ -1,9 +1,9 @@
 <div class="infowindow">
   <div>
     <p><b>Vehicle Identifier:</b><%= car.licence_plate %></p>
-    <p><b>Place:</b> <%= Geocoder.search([car.locations.order_by_sent_at.latitude.to_f, car.locations.order_by_sent_at.longitude.to_f]).first.address %></p>
-    <p><b>Lat:</b> <%= car.locations.order_by_sent_at.latitude.to_f %></p>
-    <p><b>Long:</b> <%= car.locations.order_by_sent_at.longitude.to_f%></p>
-    <p><b>Sended at:</b> <%= car.locations.order_by_sent_at.sent_at.strftime("%-d/%-m/%y: %H:%M %Z") %></p>
+    <p><b>Place:</b> <%= Geocoder.search([car.locations.last.latitude.to_f, car.locations.last.longitude.to_f]).first.address %></p>
+    <p><b>Lat:</b> <%= car.locations.last.latitude.to_f %></p>
+    <p><b>Long:</b> <%= car.locations.last.longitude.to_f%></p>
+    <p><b>Sended at:</b> <%= car.locations.last.sent_at.strftime("%-d/%-m/%y: %H:%M %Z") %></p>
   </div>
 </div>

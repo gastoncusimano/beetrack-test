@@ -6,7 +6,7 @@ class Location < ApplicationRecord
 	validate :sent_at_cannot_be_in_the_future
 
 	#Scopes
-	scope :order_by_sent_at, -> { order("sent_at").last }
+	default_scope { order("sent_at") }
 
 	def sent_at_cannot_be_in_the_future
 		if sent_at > DateTime.now

@@ -1,8 +1,12 @@
 class Api::V1::GpsController < ApplicationController
 
 	def create_location
-		CreateLocationWorker.perform_async(gps_params)
-		json_response "Creating Location", true, :ok
+		job_id = CreateLocationWorker.perform_async(gps_params)
+		if Sidekiq::Status::queued? job_id
+			json_response "Creating Location - queued", false, :ok
+		else
+			json_response "Something went wrong", false, :service_unavailable
+		end
 	end
 
 	private

@@ -9,7 +9,7 @@ class Car < ApplicationRecord
 	scope :with_locations, -> { joins(:locations).distinct}
 
   def coordinates
-    last_location = locations.order_by_sent_at
+    last_location = locations.last
     [last_location.longitude.to_f, last_location.latitude.to_f]
   end
 	

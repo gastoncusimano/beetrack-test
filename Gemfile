@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Gem for Background Jobs
 gem "sidekiq"
+gem 'sidekiq-status'
+
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 3.0'
@@ -48,8 +50,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   # Gem for factories objects
   gem 'factory_bot_rails'
-  # Gem for Swagger
-  gem 'rswag'
   # For ENV vars
   gem 'dotenv-rails'
 end

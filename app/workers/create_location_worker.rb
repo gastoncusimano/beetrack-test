@@ -1,5 +1,6 @@
 class CreateLocationWorker
 	include Sidekiq::Worker
+	include Sidekiq::Status::Worker # enables job status tracking
 	sidekiq_options retry: false
 
 	def perform(params)
